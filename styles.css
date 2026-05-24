@@ -1,56 +1,99 @@
+:root {
+    --background: #05010a;
+    --text: #e6e6ff;
+    --primary: #7c4dff;
+    --accent: #00e5ff;
+}
+
+/* GLOBAL */
 body {
     font-family: 'VT323', monospace;
-    background: var(--background);
+    background: radial-gradient(circle at top, #0b0020, #05010a 60%, #000);
     color: var(--text);
     overflow-x: hidden;
-    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16'><circle cx='8' cy='8' r='5' fill='%23ff00ff'/></svg>") 8 8, auto;
+    text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
-.cursor-trail {
-    width: 10px;
-    height: 10px;
-    background: var(--primary);
-    border-radius: 50%;
-    position: fixed;
-    pointer-events: none;
-    opacity: 0.5;
-    mix-blend-mode: screen;
+/* HEADINGS */
+h1 {
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--primary), 0 0 20px var(--accent);
+    margin-top: 80px;
 }
 
+/* IMAGE */
 img {
-    width: 450px;
-    border-radius: 10px;
+    width: 300px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(124, 77, 255, 0.5);
 }
 
+/* PARAGRAPHS */
+p {
+    max-width: 600px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+/* LIST (assignment requirement: no decoration) */
 ul {
     list-style-type: none;
     padding: 0;
 }
 
-nav {
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--primary);
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    z-index: 100;
+li {
+    margin: 10px 0;
 }
 
+/* NAVBAR (optional if you add it later) */
+nav {
+    background: rgba(10, 0, 30, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--primary);
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+/* STAR BACKGROUND */
 .stars {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
 }
 
 .star {
     position: absolute;
+    width: 2px;
+    height: 2px;
     background: white;
     border-radius: 50%;
-    animation: twinkle 1s infinite;
+    opacity: 0.8;
+    animation: twinkle 2s infinite ease-in-out;
 }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.2; transform: scale(0.6); }
+}
+
+/* LINKS */
+a {
+    color: var(--accent);
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+a:hover {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
 }
