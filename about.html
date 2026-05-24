@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
-
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
+    <div class="stars"></div>
 
     <h1>About Me</h1>
 
@@ -16,7 +18,7 @@
         skills and become more comfortable designing websites. 
         I have always enjoyed the creative side of web design.
         I would love to create websites I am proud of. 
-        It would be great to do web design as a career so I wanto to improve my skills as much as possible. 
+        It would be great to do web design as a career so I want to improve my skills as much as possible. 
     </p>
 
     <ul>
@@ -26,6 +28,21 @@
     </ul>
 
     <a href="index.html">Go Back Home</a>
+
+    <script>
+        const stars = document.querySelector(".stars");
+
+        for (let i = 0; i < 120; i++) {
+            const star = document.createElement("div");
+            star.classList.add("star");
+
+            star.style.top = Math.random() * 100 + "%";
+            star.style.left = Math.random() * 100 + "%";
+            star.style.opacity = Math.random();
+
+            stars.appendChild(star);
+        }
+    </script>
 
 </body>
 </html>

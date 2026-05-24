@@ -5,40 +5,52 @@
     --accent: #00e5ff;
 }
 
-/* GLOBAL */
 body {
     font-family: 'VT323', monospace;
     background: radial-gradient(circle at top, #0b0020, #05010a 60%, #000);
     color: var(--text);
-    overflow-x: hidden;
     text-align: center;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 /* HEADINGS */
 h1 {
     color: var(--accent);
-    text-shadow: 0 0 10px var(--primary), 0 0 20px var(--accent);
-    margin-top: 80px;
+    text-shadow: 0 0 12px var(--primary);
+    margin-top: 60px;
 }
 
 /* IMAGE */
 img {
-    width: 300px;
+    width: 280px;
     border-radius: 12px;
     margin-top: 20px;
-    box-shadow: 0 0 20px rgba(124, 77, 255, 0.5);
+    box-shadow: 0 0 20px rgba(124, 77, 255, 0.4);
 }
 
-/* PARAGRAPHS */
+/* PARAGRAPH */
 p {
-    max-width: 600px;
+    max-width: 650px;
     margin: 20px auto;
     line-height: 1.6;
 }
 
-/* LIST (assignment requirement: no decoration) */
+/* LINKS */
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--accent);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary);
+    text-shadow: 0 0 10px var(--primary);
+}
+
+/* LIST (required no bullets) */
 ul {
     list-style-type: none;
     padding: 0;
@@ -48,18 +60,7 @@ li {
     margin: 10px 0;
 }
 
-/* NAVBAR (optional if you add it later) */
-nav {
-    background: rgba(10, 0, 30, 0.7);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--primary);
-    padding: 15px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-}
-
-/* STAR BACKGROUND */
+/* STAR FIELD */
 .stars {
     position: fixed;
     width: 100%;
@@ -67,7 +68,6 @@ nav {
     top: 0;
     left: 0;
     z-index: -1;
-    overflow: hidden;
 }
 
 .star {
@@ -76,24 +76,4 @@ nav {
     height: 2px;
     background: white;
     border-radius: 50%;
-    opacity: 0.8;
-    animation: twinkle 2s infinite ease-in-out;
-}
-
-@keyframes twinkle {
-    0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.2; transform: scale(0.6); }
-}
-
-/* LINKS */
-a {
-    color: var(--accent);
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 20px;
-}
-
-a:hover {
-    color: var(--primary);
-    text-shadow: 0 0 10px var(--primary);
 }

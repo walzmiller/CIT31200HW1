@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-    <div class="stars">
-        <div class="star"></div>
-        <div class="star"></div>
-        <div class="star"></div>
-    </div>
+    <div class="stars"></div>
 
-    <h1>Welcome to My Website</h1>
+    <h1>Gavin Miller Introduction</h1>
 
     <img src="mePic.jpg" alt="Beautiful Picture of Gavin">
 
@@ -25,10 +20,24 @@
         I have always enjoyed the creativity of web design so am looking forward to taking this class!
         In my free time, I enjoy creative hobbies like ceramics, drawing, and cooking, as well as 
         outdoor activities such as traveling, hiking, and sports.
-
     </p>
 
     <a href="about.html">Go to About Page</a>
+
+    <script>
+        const stars = document.querySelector(".stars");
+
+        for (let i = 0; i < 120; i++) {
+            const star = document.createElement("div");
+            star.classList.add("star");
+
+            star.style.top = Math.random() * 100 + "%";
+            star.style.left = Math.random() * 100 + "%";
+            star.style.opacity = Math.random();
+
+            stars.appendChild(star);
+        }
+    </script>
 
 </body>
 </html>
